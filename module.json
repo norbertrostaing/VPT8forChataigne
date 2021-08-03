@@ -1,0 +1,2295 @@
+{
+	"name": "VPT8",
+	"type": "OSC",
+	"path": "Software",
+	
+	"version": "0.1",
+	"description": "Allow you to control VPT8 with chataigne",
+	"url":"https://github.com/norbertrostaing/VPT8forChataigne",
+	"downloadURL": "https://github.com/norbertrostaing/VPT8forChataigne/archive/refs/heads/main.zip",
+	
+	"hasInput": true,
+	"hasOutput": true,
+
+	"hideDefaultCommands": true,
+	"hideDefaultParameters": [
+	],
+
+	"defaults": {
+		"OSC Input": {
+			"localPort" : 6667,
+		},
+		"OSC Outputs": {
+			"OSC Output": {
+				"local" : true,
+				"remotePort" : 6666,
+				"listenToFeedback":false
+			}
+		}
+	},
+	
+	"parameters": {
+	},
+	
+	"scripts": [
+		"VPT8.js"
+	],
+	
+	"values": {
+	},
+	
+	"commands": {
+
+		"sourceVideoClip" : {
+			"menu" : "Source Video",
+			"callback" : "sourceVideoClip",
+			"parameters" : {
+				"Number": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Name": {
+					"type": "String"
+				}, 
+			}
+		},
+
+		"sourceVideoClipnr" : {
+			"menu" : "Source Video",
+			"callback" : "sourceVideoClipnr",
+			"parameters" : {
+				"Number": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Video number": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"sourceVideoRate" : {
+			"menu" : "Source Video",
+			"callback" : "sourceVideoRate",
+			"parameters" : {
+				"Number": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Speed": {
+					"type": "Float",
+					"default": 0, 
+					"min":-10,
+					"max":10,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"sourceVideoLoop" : {
+			"menu" : "Source Video",
+			"callback" : "sourceVideoLoop",
+			"parameters" : {
+				"Number": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Loop type": {
+					"type": "Enum",
+					"options" : {
+						"Loop Off" : 0,
+						"Loop" : 1,
+						"Palindrome" : 2,
+						"Loop once" : 3
+					}
+				}, 
+
+			}
+		},
+
+		"sourceVideoXfade" : {
+			"menu" : "Source Video",
+			"callback" : "sourceVideoXfade",
+			"parameters" : {
+				"Number": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Xfade": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"sourceVideoResolution" : {
+			"menu" : "Source Video",
+			"callback" : "sourceVideoResolution",
+			"parameters" : {
+				"Number": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Enum",
+					"options" : {
+						"Full" : 0,
+						"2/3" : 1,
+						"1/2" : 2,
+						"1/3" : 3,
+						"1/4" : 4,
+						"1/8" : 5,
+						"1/6" : 6
+					}
+				}, 
+			}
+		},
+
+		"sourceVideoTrig" : {
+			"menu" : "Source Video",
+			"callback" : "sourceVideoTrig",
+			"parameters" : {
+				"Number": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}
+			}
+		},
+
+		"sourceVideoOn" : {
+			"menu" : "Source Video",
+			"callback" : "sourceVideoOn",
+			"parameters" : {
+				"Number": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Boolean",
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"sourceVideoVol" : {
+			"menu" : "Source Video",
+			"callback" : "sourceVideoVol",
+			"parameters" : {
+				"Number": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Volume": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"sourceVideoPan" : {
+			"menu" : "Source Video",
+			"callback" : "sourceVideoPan",
+			"parameters" : {
+				"Number": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Pan": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"sourceVideoLoopreport" : {
+			"menu" : "Source Video",
+			"callback" : "sourceVideoLoopreport",
+			"parameters" : {
+				"Number": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"sourceVideoLast" : {
+			"menu" : "Source Video",
+			"callback" : "sourceVideoLast",
+			"parameters" : {
+				"Number": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"sourceVideoRandom" : {
+			"menu" : "Source Video",
+			"callback" : "sourceVideoRandom",
+			"parameters" : {
+				"Number": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"sourceVideoScrub" : {
+			"menu" : "Source Video",
+			"callback" : "sourceVideoScrub",
+			"parameters" : {
+				"Number": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"sourceVideoStart" : {
+			"menu" : "Source Video",
+			"callback" : "sourceVideoStart",
+			"parameters" : {
+				"Number": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"sourceVideoStop" : {
+			"menu" : "Source Video",
+			"callback" : "sourceVideoStop",
+			"parameters" : {
+				"Number": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"sourceVideoIn" : {
+			"menu" : "Source Video",
+			"callback" : "sourceVideoIn",
+			"parameters" : {
+				"Number": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"sourceVideoOut" : {
+			"menu" : "Source Video",
+			"callback" : "sourceVideoOut",
+			"parameters" : {
+				"Number": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"sourceVideoLoopreset" : {
+			"menu" : "Source Video",
+			"callback" : "sourceVideoLoopreset",
+			"parameters" : {
+				"Number": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"sourceVideoPlay" : {
+			"menu" : "Source Video",
+			"callback" : "sourceVideoPlay",
+			"parameters" : {
+				"Number": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"sourceVideoCliptime" : {
+			"menu" : "Source Video",
+			"callback" : "sourceVideoCliptime",
+			"parameters" : {
+				"Number": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"sourceVideoAlpha" : {
+			"menu" : "Source Video",
+			"callback" : "sourceVideoAlpha",
+			"parameters" : {
+				"Number": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"sourceStillClip" : {
+			"menu" : "Source Still",
+			"callback" : "sourceStillClip",
+			"parameters" : {
+				"Source Name": {
+					"type": "String",
+					"default": "7video"
+				}, 
+				"Value": {
+					"type": "String"
+				}, 
+			}
+		},
+
+		"sourceStillClipnr" : {
+			"menu" : "Source Still",
+			"callback" : "sourceStillClipnr",
+			"parameters" : {
+				"Source Name": {
+					"type": "String",
+					"default": "7video"
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"sourceStillXfade" : {
+			"menu" : "Source Still",
+			"callback" : "sourceStillXfade",
+			"parameters" : {
+				"Source Name": {
+					"type": "String",
+					"default": "7video"
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"sourceStillResolution" : {
+			"menu" : "Source Still",
+			"callback" : "sourceStillResolution",
+			"parameters" : {
+				"Source Name": {
+					"type": "String",
+					"default": "7video"
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"sourceStillRefresh" : {
+			"menu" : "Source Still",
+			"callback" : "sourceStillRefresh",
+			"parameters" : {
+				"Source Name": {
+					"type": "String",
+					"default": "7video"
+				}, 
+				"Value": {
+					"type": "Enum",
+					"options" : {
+						"33ms" : 0,
+						"100ms" : 1,
+						"500ms" : 2,
+						"2000ms" : 3
+					}
+				}, 
+			}
+		},
+
+		"sourceStillOn" : {
+			"menu" : "Source Still",
+			"callback" : "sourceStillOn",
+			"parameters" : {
+				"Source Name": {
+					"type": "String",
+					"default": "7video"
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"sourceStillPlay" : {
+			"menu" : "Source Still",
+			"callback" : "sourceStillPlay",
+			"parameters" : {
+				"Source Name": {
+					"type": "String",
+					"default": "7video"
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"sourceStillSlide_length" : {
+			"menu" : "Source Still",
+			"callback" : "sourceStillSlide_length",
+			"parameters" : {
+				"Source Name": {
+					"type": "String",
+					"default": "7video"
+				}, 
+				"Time (s)": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"sourceMixA" : {
+			"menu" : "Source Mix",
+			"callback" : "sourceMixA",
+			"parameters" : {
+				"Source Name": {
+					"type": "String",
+					"default": "8video"
+				}, 
+				"Source": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"sourceMixB" : {
+			"menu" : "Source Mix",
+			"callback" : "sourceMixB",
+			"parameters" : {
+				"Source Name": {
+					"type": "String",
+					"default": "8video"
+				}, 
+				"Source": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"sourceMixMix" : {
+			"menu" : "Source Mix",
+			"callback" : "sourceMixMix",
+			"parameters" : {
+				"Source Name": {
+					"type": "String",
+					"default": "8video"
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"sourceMixMixtype" : {
+			"menu" : "Source Mix",
+			"callback" : "sourceMixMixtype",
+			"parameters" : {
+				"Source Name": {
+					"type": "String",
+					"default": "8video"
+				}, 
+				"Value": {
+					"type": "Enum",
+					"options" : {
+						"Mix" : 0,
+						"Additive" : 1,
+						"Multiply" : 2,
+						"Overlay" : 3,
+						"Screen" : 4,
+						"Stamp" : 5,
+						"Substractive" : 6,
+						"Average" : 7,
+						"Brightlight" : 8,
+						"Softlight" : 9,
+						"Hardlight" : 10,
+						"Lighten" : 11,
+						"Burn" : 12,
+						"Darken" : 13,
+						"Freeze" : 14,
+						"Heat" : 15,
+						"Lumablend" : 16
+					}
+				}, 
+			}
+		},
+
+		"sourceCamOn" : {
+			"menu" : "Source Cam",
+			"callback" : "sourceCamOn",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"sourceCamRec" : {
+			"menu" : "Source Cam",
+			"callback" : "sourceCamRec",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"sourceCamRecdest" : {
+			"menu" : "Source Cam",
+			"callback" : "sourceCamRecdest",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Destination": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"SourceSyphonOn" : {
+			"menu" : "Source Syphon",
+			"callback" : "SourceSyphonOn",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"SourceSyphonUpdate" : {
+			"menu" : "Source Syphon",
+			"callback" : "SourceSyphonUpdate",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"SourceSyphonServer" : {
+			"menu" : "Source Syphon",
+			"callback" : "SourceSyphonServer",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "String"
+				}, 
+			}
+		},
+
+		"SourceSyphonServerlist" : {
+			"menu" : "Source Syphon",
+			"callback" : "SourceSyphonServerlist",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Number": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"SourceSpoutOn" : {
+			"menu" : "Source Spout",
+			"callback" : "SourceSpoutOn",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"SourceSpoutUpdate" : {
+			"menu" : "Source Spout",
+			"callback" : "SourceSpoutUpdate",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"SourceSpoutServer" : {
+			"menu" : "Source Spout",
+			"callback" : "SourceSpoutServer",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "String",
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"SourceSpoutServerlist" : {
+			"menu" : "Source Spout",
+			"callback" : "SourceSpoutServerlist",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerFade" : {
+			"menu" : "Layer",
+			"callback" : "layerFade",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerRgb" : {
+			"menu" : "Layer",
+			"callback" : "layerRgb",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Color",
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerColor" : {
+			"menu" : "Layer",
+			"callback" : "layerColor",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Color",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerDcolor" : {
+			"menu" : "Layer",
+			"callback" : "layerDcolor",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Color",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerRed" : {
+			"menu" : "Layer",
+			"callback" : "layerRed",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerGreen" : {
+			"menu" : "Layer",
+			"callback" : "layerGreen",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerBlue" : {
+			"menu" : "Layer",
+			"callback" : "layerBlue",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerBlendmode" : {
+			"menu" : "Layer",
+			"callback" : "layerBlendmode",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Enum",
+					"options" : {
+						"Normal" : 0,
+						"Additive" : 1,
+						"Multiply" : 2
+					}
+				}, 
+			}
+		},
+
+		"layerLayername" : {
+			"menu" : "Layer",
+			"callback" : "layerLayername",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "String",
+				}, 
+			}
+		},
+
+		"layerLayerorder" : {
+			"menu" : "Layer",
+			"callback" : "layerLayerorder",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerScalex" : {
+			"menu" : "Layer",
+			"callback" : "layerScalex",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerScaley" : {
+			"menu" : "Layer",
+			"callback" : "layerScaley",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerPosx" : {
+			"menu" : "Layer",
+			"callback" : "layerPosx",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerPosy" : {
+			"menu" : "Layer",
+			"callback" : "layerPosy",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerCornerpinUpperLeft" : {
+			"menu" : "Layer",
+			"callback" : "layerCornerpinUpperLeft",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"X": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+				"Y": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerCornerpinLowerLeft" : {
+			"menu" : "Layer",
+			"callback" : "layerCornerpinLowerLeft",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"X": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+				"Y": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerCornerpinUpperRight" : {
+			"menu" : "Layer",
+			"callback" : "layerCornerpinUpperRight",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"X": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+				"Y": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerCornerpinLowerRight" : {
+			"menu" : "Layer",
+			"callback" : "layerCornerpinLowerRight",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"X": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+				"Y": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerSource" : {
+			"menu" : "Layer",
+			"callback" : "layerSource",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "String",
+				}, 
+			}
+		},
+
+		"layerFlipOn" : {
+			"menu" : "Layer",
+			"callback" : "layerFlipOn",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerFlipFliptype" : {
+			"menu" : "Layer",
+			"callback" : "layerFlipFliptype",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Flit type": {
+					"type": "Enum",
+					"options" : {
+						"Normal" : 0,
+						"Hor" : 1,
+						"Vert" : 2,
+						"Hor + vert" : 3
+					}
+				}, 
+			}
+		},
+
+		"layerTileOn" : {
+			"menu" : "Layer",
+			"callback" : "layerTileOn",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerTileXtile" : {
+			"menu" : "Layer",
+			"callback" : "layerTileXtile",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Loop type": {
+					"type": "Enum",
+					"options" : {
+						"Normal" : 0,
+						"1/2" : 1,
+						"1/2" : 2,
+						"1/3" : 3,
+						"2/3" : 4,
+						"3/3" : 5,
+						"1/4" : 6,
+						"2/4" : 7,
+						"3/4" : 8,
+						"4/4" : 9,
+						"1/5" : 10,
+						"2/5" : 11,
+						"3/5" : 12,
+						"4/5" : 13,
+						"5/5" : 14
+					}
+				}, 
+			}
+		},
+
+		"layerTileYtile" : {
+			"menu" : "Layer",
+			"callback" : "layerTileYtile",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Loop type": {
+					"type": "Enum",
+					"options" : {
+						"Normal" : 0,
+						"1/2" : 1,
+						"1/2" : 2,
+						"1/3" : 3,
+						"2/3" : 4,
+						"3/3" : 5,
+						"1/4" : 6,
+						"2/4" : 7,
+						"3/4" : 8,
+						"4/4" : 9,
+						"1/5" : 10,
+						"2/5" : 11,
+						"3/5" : 12,
+						"4/5" : 13,
+						"5/5" : 14
+					}
+				}, 
+			}
+		},
+
+		"layerZoomOn" : {
+			"menu" : "Layer",
+			"callback" : "layerZoomOn",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerZoomXzoom" : {
+			"menu" : "Layer",
+			"callback" : "layerZoomXzoom",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerZoomYzoom" : {
+			"menu" : "Layer",
+			"callback" : "layerZoomYzoom",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerZoomXanchor" : {
+			"menu" : "Layer",
+			"callback" : "layerZoomXanchor",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerZoomYanchor" : {
+			"menu" : "Layer",
+			"callback" : "layerZoomYanchor",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerZoomRota" : {
+			"menu" : "Layer",
+			"callback" : "layerZoomRota",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerBlurOn" : {
+			"menu" : "Layer",
+			"callback" : "layerBlurOn",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerBlurBlur" : {
+			"menu" : "Layer",
+			"callback" : "layerBlurBlur",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerMblurOn" : {
+			"menu" : "Layer",
+			"callback" : "layerMblurOn",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerMblurMblur" : {
+			"menu" : "Layer",
+			"callback" : "layerMblurMblur",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerBrcosaOn" : {
+			"menu" : "Layer",
+			"callback" : "layerBrcosaOn",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerBrcosaBrightness" : {
+			"menu" : "Layer",
+			"callback" : "layerBrcosaBrightness",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerBrcosaContrast" : {
+			"menu" : "Layer",
+			"callback" : "layerBrcosaContrast",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerBrcosaSaturation" : {
+			"menu" : "Layer",
+			"callback" : "layerBrcosaSaturation",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerMaskOn" : {
+			"menu" : "Layer",
+			"callback" : "layerMaskOn",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerMaskSource" : {
+			"menu" : "Layer",
+			"callback" : "layerMaskSource",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Mask Name": {
+					"type": "String",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerMaskInv" : {
+			"menu" : "Layer",
+			"callback" : "layerMaskInv",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerMaskBlur_on" : {
+			"menu" : "Layer",
+			"callback" : "layerMaskBlur_on",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerMaskBlur" : {
+			"menu" : "Layer",
+			"callback" : "layerMaskBlur",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerMaskSwitch" : {
+			"menu" : "Layer",
+			"callback" : "layerMaskSwitch",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerMaskMoving" : {
+			"menu" : "Layer",
+			"callback" : "layerMaskMoving",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerEdgeblendOn" : {
+			"menu" : "Layer",
+			"callback" : "layerEdgeblendOn",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerEdgeblendLeft" : {
+			"menu" : "Layer",
+			"callback" : "layerEdgeblendLeft",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerEdgeblendDown" : {
+			"menu" : "Layer",
+			"callback" : "layerEdgeblendDown",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerEdgeblendRight" : {
+			"menu" : "Layer",
+			"callback" : "layerEdgeblendRight",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerEdgeblendUp" : {
+			"menu" : "Layer",
+			"callback" : "layerEdgeblendUp",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerEdgeblendInv" : {
+			"menu" : "Layer",
+			"callback" : "layerEdgeblendInv",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerMeshOn" : {
+			"menu" : "Layer",
+			"callback" : "layerMeshOn",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerMeshGridsize" : {
+			"menu" : "Layer",
+			"callback" : "layerMeshGridsize",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"layerMeshTrig" : {
+			"menu" : "Layer",
+			"callback" : "layerMeshTrig",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"presetGoto" : {
+			"menu" : "Preset",
+			"callback" : "presetGoto",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"presetPrevNext" : {
+			"menu" : "Preset",
+			"callback" : "presetPrevNext",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"presetNextPrev" : {
+			"menu" : "Preset",
+			"callback" : "presetNextPrev",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"cueGoto" : {
+			"menu" : "Cue",
+			"callback" : "cueGoto",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"cueNext" : {
+			"menu" : "Cue",
+			"callback" : "cueNext",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"cuePrev" : {
+			"menu" : "Cue",
+			"callback" : "cuePrev",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"cueMode" : {
+			"menu" : "Cue",
+			"callback" : "cueMode",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"sourcePresetGoto" : {
+			"menu" : "Source Preset",
+			"callback" : "sourcePresetGoto",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"sourcePresetNext" : {
+			"menu" : "Source Preset",
+			"callback" : "sourcePresetNext",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"sourcePresetPrev" : {
+			"menu" : "Source Preset",
+			"callback" : "sourcePresetPrev",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"LFOSpeed" : {
+			"menu" : "LFO",
+			"callback" : "LFOSpeed",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"LFOPhase" : {
+			"menu" : "LFO",
+			"callback" : "LFOPhase",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"LFOVal" : {
+			"menu" : "LFO",
+			"callback" : "LFOVal",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"LFORange" : {
+			"menu" : "LFO",
+			"callback" : "LFORange",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"LFOLfomix" : {
+			"menu" : "LFO",
+			"callback" : "LFOLfomix",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Float",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"LFOOn" : {
+			"menu" : "LFO",
+			"callback" : "LFOOn",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+		"LFOWave" : {
+			"menu" : "LFO",
+			"callback" : "LFOWave",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Loop type": {
+					"type": "Enum",
+					"options" : {
+						"Sine" : 0,
+						"Ramp" : 1,
+						"Triangle" : 2,
+						"Square" : 3
+					}
+				}, 
+			}
+		},
+
+		"LFOWaveinv" : {
+			"menu" : "LFO",
+			"callback" : "LFOWaveinv",
+			"parameters" : {
+				"Playback": {
+					"type": "Integer",
+					"default": 1, 
+					"min":1,
+					"useForMapping": true
+				}, 
+				"Value": {
+					"type": "Integer",
+					"default": 0, 
+					"min":0,
+					"max":1,
+					"useForMapping": true
+				}, 
+			}
+		},
+
+	}
+}
