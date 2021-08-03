@@ -1,4 +1,4 @@
 # LightShark Control
-Control your light shark LS-1 or LS-core with chataigne (OSC implementation)
+Control VPT8 with chataigne (OSC implementation)
 
-enable OSC in your lightShark to use this module
+Default VPT8 OSC ports are 6666 (input) and 6667 (output) 
